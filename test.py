@@ -13,3 +13,6 @@ def printTest():
     print "Hello World"
     return
 
+def printSecond():
+    print "Second Commit"
+    return

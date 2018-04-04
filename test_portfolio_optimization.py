@@ -19,7 +19,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-import portfolioopt as pfopt
+import portfolio_optimization as pfopt
 
 
 __all__ = ['create_test_data']

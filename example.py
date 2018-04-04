@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 import portfolio_optimization as pfopt
-
+import test_portfolio_optimization as tpfopt
 
 def section(caption):
     print('\n\n' + str(caption))
@@ -31,7 +31,7 @@ def print_portfolio_info(returns, avg_rets, weights):
 
 
 def main():
-    returns, cov_mat, avg_rets = pfopt.create_test_data()
+    returns, cov_mat, avg_rets = tpfopt.create_test_data()
     
     section("Example returns")
     print(returns.head(10))

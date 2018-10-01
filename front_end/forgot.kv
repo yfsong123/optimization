@@ -1,0 +1,21 @@
+<Forgot>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: "Back to Login"
+            font_size: 12
+            size_hint: 0.2, 0.1
+            pos_hint: {'x': 0, 'y':0.1}
+            background_color: (0, 0, 1, 0)
+            on_press: root.back_to_login()
+            
+        Button:
+            text: "Forgot Username or Password"
+            background_color: [0,0,1,3]
+            size_hint: 0.7, 0.1
+            pos_hint: {'x': 0, 'y':0.1}
+            font_size: 22
+        Button:
+            text: "Reset"
+            font_size: 24
+            

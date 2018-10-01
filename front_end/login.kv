@@ -1,0 +1,75 @@
+#:include connected.kv
+#:include forgot.kv
+
+<Login>:
+    BoxLayout
+        id: login_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+        
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'background.jpg'
+        Label:
+            text: 'Welcome to Portfolio Optimizer'
+            font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Username'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: login
+                multiline:False
+                font_size: 18
+                size_hint: 1, 0.5
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: password
+                multiline:False
+                password:True
+                font_size: 18
+                size_hint: 1, 0.5
+
+        Button:
+            text: 'Sign in'
+            size_hint: 0.2, 0.3
+            pos_hint: {'x': 0.4, 'y':0.5}
+            font_size: 15
+            color: [0,0,1,1]
+
+            on_press: root.do_login(login.text, password.text)
+            
+            
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                text: 'Forget Username/Password?'
+                size_hint: 0.2, 0.3
+                pos_hint: {'x': 0.4, 'y':0.5}
+                font_size: 15
+                color: [0,0,0,1]
+                on_press: root.forgot()
+                
+            Button:
+                text: 'Not Enrolled? Sign Up Now'
+                size_hint: 0.2, 0.3
+                pos_hint: {'x': 0.4, 'y':0.5}
+                font_size: 15
+                color: [0,0,0,1]

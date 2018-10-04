@@ -15,12 +15,35 @@ from kivy.uix.settings import SettingsWithTabbedPanel
 from kivy.logger       import Logger
 from kivy.lang         import Builder
 from kivy.uix.button   import Button
-
+from kivy.core.text    import LabelBase
 from kivy.properties   import StringProperty
+from kivy.uix.dropdown import DropDown
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 import os
+# The website of the font is in the below:
+# https://www.fontsquirrel.com/
+# the tutorial video is
+# https://www.youtube.com/watch?v=Y5piQF0Rh-M
+LabelBase.register(name="rubiklight",
+             fn_regular= "Rubik-Light.ttf"      )
+
+class FirstPage(Screen):
+    def test(self):
+        pass
+
+class MainPage(Screen):
+    def test(self):
+        pass
+    
+
+    
 
 class Connected(Screen):
+    def connected(self):
+        self.manager.transition = SlideTransition(direction="left")
+        self.manager.current = 'mainpage'
+        
+
     def disconnect(self):
         self.manager.transition = SlideTransition(direction="right")
         self.manager.current = 'login'
@@ -60,12 +83,15 @@ class LoginApp(App):
     password = StringProperty(None)
 
     def build(self):
-        self.icon = 'myicon.jpg'
+        self.icon = './figures/myicon.jpg'
         manager = ScreenManager()
 
         manager.add_widget(Login(name='login'))
         manager.add_widget(Connected(name='connected'))
         manager.add_widget(Forgot(name='forgot'))
+        manager.add_widget(MainPage(name='mainpage'))
+        #manager.add_widget(CustomDropDown(name='customdropdown'))
+        manager.add_widget(FirstPage(name='firstpage'))
         return manager
 
     def get_application_config(self):

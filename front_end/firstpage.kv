@@ -1,0 +1,39 @@
+<FirstPage>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            
+            
+    BoxLayout:
+        orientation: 'horizontal'
+
+        Button:
+            on_press: app.root.current = "connected"
+            size_hint: 0.1, 0.05
+            background_color: (0, 0, 1, 0)
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            Image:
+                source: './figures/icons8-back-arrow-96.png'
+                x: self.parent.width * .5 - self.width * .9   
+                size: self.parent.size
+                stretch: True
+        Button:
+            on_press: app.root.current = "mainpage"
+            size_hint: 0.1, 0.05
+            background_color: (0, 0, 1, 0)
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            Image:
+                source: './figures/icons8-forward-button-96.png'
+                x: self.parent.width * .5 + self.width * .9   
+                size: self.parent.size
+                stretch: True
+                
+    
+    

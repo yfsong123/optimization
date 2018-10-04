@@ -1,0 +1,64 @@
+<MainPage>:
+    name: "Main Page"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            
+            
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            id: btn
+            text: 'Press'
+            on_release: dropdown.open(self)
+            size_hint_y: None
+            height: '48dp'
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                text: " Back"
+                font_size: self.width *0.05
+                size_hint: 0.1, 0.05
+                pos_hint: {'x': 0, 'y':0}
+                background_color: (0, 0, 1, 1)
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                on_press: app.root.current = "connected"
+            Button:
+                text: "Forward "
+                font_size: self.width *0.05
+                size_hint: 0.1, 0.05
+                pos_hint: {'right': 0, 'y':0}
+                background_color: (0, 0, 1, 1)
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+                on_press: app.root.current = "firstpage"
+                
+
+            
+        DropDown:
+            id: dropdown
+            on_parent: self.dismiss()
+            on_select: btn.text = '{}'.format(args[1])
+    
+            Button:
+                text: 'First Item'
+                size_hint_y: None
+                height: '48dp'
+                on_release: dropdown.select('First Item')
+    
+            Label:
+                text: 'Second Item'
+                size_hint_y: None
+                height: '48dp'
+    
+            Button:
+                text: 'Third Item'
+                size_hint_y: None
+                height: '48dp'
+                on_release: dropdown.select('Third Item')

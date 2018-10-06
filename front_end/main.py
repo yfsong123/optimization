@@ -18,8 +18,9 @@ from kivy.uix.button   import Button
 from kivy.core.text    import LabelBase
 from kivy.properties   import StringProperty
 from kivy.uix.dropdown import DropDown
-from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
+from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition, NoTransition
 import os
+import webbrowser
 # The website of the font is in the below:
 # https://www.fontsquirrel.com/
 # the tutorial video is
@@ -56,6 +57,45 @@ class Forgot(Screen):
         self.manager.transition = SlideTransition(direction="right")
         self.manager.current = 'login'
         self.manager.get_screen('login').resetForm()
+
+class ExampleScreenNA(Screen):
+    def go_na(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenna'
+    def go_emea(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenemea'
+    def go_apac(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenapac'  
+    def go_web(self):
+        webbrowser.open("http://kivy.org/")
+    pass
+
+class ExampleScreenEMEA(Screen):
+    def go_na(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenna'
+    def go_emea(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenemea'
+    def go_apac(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenapac'  
+    pass
+class ExampleScreenAPAC(Screen):
+    def go_na(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenna'
+    def go_emea(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenemea'
+    def go_apac(self):
+        self.manager.transition = NoTransition()
+        self.manager.current = 'examplescreenapac'  
+    pass
+
+
     
 class Login(Screen):
     def do_login(self, loginText, passwordText):
@@ -92,6 +132,10 @@ class LoginApp(App):
         manager.add_widget(MainPage(name='mainpage'))
         #manager.add_widget(CustomDropDown(name='customdropdown'))
         manager.add_widget(FirstPage(name='firstpage'))
+        manager.add_widget(ExampleScreenNA(name='examplescreenna'))
+        manager.add_widget(ExampleScreenEMEA(name='examplescreenemea'))
+        manager.add_widget(ExampleScreenAPAC(name='examplescreenapac'))
+        
         return manager
 
     def get_application_config(self):

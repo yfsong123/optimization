@@ -1,0 +1,208 @@
+<MyButton@Button>:
+    size_hint:1,None
+    background_color: 0, 50, 100, 0.5
+    font_color: 0, 0, 0, 1
+    font_size: self.width * 0.03
+
+<ExampleScreenNA>:
+    name: 'examplescreenna'
+    canvas.before:
+        Color:
+            rgba: 1, 0, 0, 0.3
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'World News are All Here'
+            size_hint: 1, 0.01
+            font_size: self.width * 0.05
+            bold: True
+            background_color: 0, 0, 0, 1
+        GridLayout:
+            size_hint: 1, 0.005
+            cols: 3
+            rows: 1
+            Button:
+                text: 'NA'
+                background_color: 255, 0, 0, 1
+                on_press: root.go_na()
+            Button:
+                text: "EMEA"
+                on_press: root.go_emea()
+            Button:
+                text: "APAC"
+                on_press: root.go_apac()
+                
+        ScrollView:
+            size_hint: 1,0.03
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                
+                GridLayout:
+                    size_hint: 1,None
+                    height: self.minimum_height
+                    cols: 1
+                    rows: 8                
+                    MyButton:
+                        text: 'United States is good' 
+                    MyButton:
+                        text: 'Canada has oil'
+                    MyButton:
+                        text: 'Kivy Website'
+                        on_press: root.go_web()
+                    MyButton:
+                        text: 'Filler'
+                    MyButton: 
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+    BoxLayout:
+        Button:
+            text: 'Home'
+            size_hint: 1, .1
+            background_color: 0, 0, 255, 1
+            on_press: root.manager.current = 'firstpage'
+
+<ExampleScreenEMEA>:
+    name: 'examplescreenemea'
+    canvas.before:
+        Color:
+            rgba: 1, 0, 0, 0.3
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'World News are All Here'
+            size_hint: 1, 0.01
+            font_size: self.width * 0.05
+            bold: True
+            background_color: 0, 0, 0, 1
+        GridLayout:
+            size_hint: 1, 0.005
+            cols: 3
+            rows: 1
+            Button:
+                text: 'NA'
+                
+                on_press: root.go_na()
+            Button:
+                text: "EMEA"
+                background_color: 255, 0, 0, 1
+                on_press: root.go_emea()
+            Button:
+                text: "APAC"
+                on_press: root.go_apac()
+                
+        ScrollView:
+            size_hint: 1,0.03
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                
+                GridLayout:
+                    size_hint: 1,None
+                    height: self.minimum_height
+                    cols: 1
+                    rows: 8                
+                    MyButton:
+                        text: 'England is good' 
+                    MyButton:
+                        text: 'France wins'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton: 
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+    BoxLayout:
+        Button:
+            text: 'Home'
+            size_hint: 1, .1
+            background_color: 0, 0, 255, 1
+            on_press: root.manager.current = 'firstpage'
+            
+
+<ExampleScreenAPAC>:
+    name: 'examplescreenapac'
+    canvas.before:
+        Color:
+            rgba: 1, 0, 0, 0.3
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'World News are All Here'
+            size_hint: 1, 0.01
+            font_size: self.width * 0.05
+            bold: True
+            background_color: 0, 0, 0, 1
+        GridLayout:
+            size_hint: 1, 0.005
+            cols: 3
+            rows: 1
+            Button:
+                text: 'NA'
+                
+                on_press: root.go_na()
+            Button:
+                text: "EMEA"
+                on_press: root.go_emea()
+            Button:
+                text: "APAC"
+                background_color: 255, 0, 0, 1
+                on_press: root.go_apac()
+                
+        ScrollView:
+            size_hint: 1,0.03
+            GridLayout:
+                size_hint: 1,None
+                height: self.minimum_height
+                cols: 1
+                
+                GridLayout:
+                    size_hint: 1,None
+                    height: self.minimum_height
+                    cols: 1
+                    rows: 8                
+                    MyButton:
+                        text: 'China is good' 
+                    MyButton:
+                        text: 'Japan has no oil'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton: 
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+                    MyButton:
+                        text: 'Filler'
+
+    BoxLayout:
+        Button:
+            text: 'Home'
+            size_hint: 1, .1
+            background_color: 0, 0, 255, 1
+            on_press: root.manager.current = 'firstpage'

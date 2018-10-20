@@ -21,6 +21,7 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition, NoTransition
 import os
 import webbrowser
+import numpy as np
 # The website of the font is in the below:
 # https://www.fontsquirrel.com/
 # the tutorial video is

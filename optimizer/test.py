@@ -182,9 +182,9 @@ plt.scatter(min_vol_port[1],min_vol_port[0],marker=(5,1,0),color='g',s=1000)
 
 
 def printTest():
-    print "Hello World"
+    print ("Hello World")
     return
 
 def printSecond():
-    print "Second Commit"
+    print ("Second Commit")
     return

@@ -6,7 +6,7 @@ Created on Mon Apr  2 22:59:24 2018
 @author: yunfeisong
 """
 
-%matplotlib inline
+#%matplotlib inline
 import   numpy                   as      np
 import   matplotlib.pyplot       as      plt
 import   cvxopt                  as      opt
@@ -38,8 +38,8 @@ def rand_weights(n):
     k = np.random.rand(n)
     return k / sum(k)
 
-print rand_weights(n_assets)
-print rand_weights(n_assets)
+print (rand_weights(n_assets))
+print (rand_weights(n_assets))
 
 def random_portfolio(returns):
     ''' 
@@ -62,7 +62,7 @@ def random_portfolio(returns):
 n_portfolios = 5000
 means, stds = np.column_stack([
     random_portfolio(return_vec) 
-    for _ in xrange(n_portfolios)
+    for _ in range(n_portfolios)
 ])
 
 plt.plot(stds, means, 'o', markersize=5)
